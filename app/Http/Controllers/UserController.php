@@ -9,7 +9,11 @@ class UserController extends Controller
 {
     public function index() 
     {
-        return view('user/index');
+        $users = User::all();
+
+        return view('user/index',[
+            'users' => $users,
+        ]);
     }
 
     public function add() 
@@ -23,7 +27,7 @@ class UserController extends Controller
             'first_name' => 'required|string|max:50',
             'last_name'  => 'required|string|max:50',
             'email'      => 'required|string|lowercase|email|max:50|unique:'.User::class,
-            'phone'      => 'required|digits:10',
+            'phone'      => 'required|digits:11',
         ];
 
         $request->validate($userData);
