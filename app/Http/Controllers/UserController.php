@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\GamePlayers;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -38,9 +39,14 @@ class UserController extends Controller
     public function edit(Request $request) {
         $userId = $request->id;
         $user   = User::findOrFail($userId);
+
+        $average = GamePlayers::Where([
+            'user_id' => $userId
+        ])->avg('score');
         
         return view('user/edit', [
-            'user' => $user,
+            'user'    => $user,
+            'average' => $average
         ]);
     }
 
