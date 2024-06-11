@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     </head>
     <body>         
-        <div class="m-5 w-50 w-md-100">
+        @include('components/menu')
+        <div class="m-5 w-50 w-md-100">            
             @include('components/alert')
             @yield('content')
         </div>        
