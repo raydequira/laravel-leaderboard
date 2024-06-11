@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('/users', [UserController::class, 'index'])->name('users');
 Route::get('/user/add', [UserController::class, 'add'])->name('user.add');
 Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+Route::post('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
