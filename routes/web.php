@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/users', [UserController::class, 'index'])->name('users');
 Route::get('/user/add', [UserController::class, 'add'])->name('user.add');
+Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
