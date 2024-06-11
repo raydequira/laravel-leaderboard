@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\GamePlayers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -23,5 +23,10 @@ class User extends Authenticatable
         'email',
         'phone',
     ];
+
+    public function games_players()
+    {
+        return $this->hasMany(GamePlayers::class);
+    }
 
 }

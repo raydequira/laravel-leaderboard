@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LeaderboardController::class, 'index'])->name('leaderboard');
 
 Route::get('/users', [UserController::class, 'index'])->name('users');
 Route::get('/user/add', [UserController::class, 'add'])->name('user.add');
