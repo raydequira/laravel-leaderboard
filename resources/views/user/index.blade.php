@@ -13,6 +13,7 @@
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Joined Date</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -23,6 +24,7 @@
                 <td>{{ $user->first_name }}</td>
                 <td>{{ $user->last_name }}</td>
                 <td>{{ $user->email }}</td>
+                <td>{{ $user->created_at }}</td>
                 <td>
                     <a href="{{ route('user.edit', ['id' => $user->id])}}">Edit</a>
                 </td>
